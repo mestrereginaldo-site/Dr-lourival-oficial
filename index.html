@@ -1,0 +1,1816 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Lourival Oliveira - Advocacia de Excelência em Salvador</title>
+    <meta name="description" content="Dr. Lourival Oliveira - Advogado especializado em Direito Previdenciário com mais de 10 anos de experiência em Salvador. Atuação também em Direito do Trabalho, Civil, Criminal e do Consumidor.">
+    <meta name="keywords" content="advogado Salvador, direito previdenciário, advogado trabalhista, direito civil, direito criminal, direito consumidor, advogado Pituaçu">
+    
+    <!-- Favicon base64 embutido -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚖️</text></svg>">
+    
+    <!-- Fonts e Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS embutido -->
+    <style>
+        /* Reset e Configurações Gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a3a5f;
+            --primary-light: #2a5a8c;
+            --secondary: #d4af37;
+            --secondary-light: #e6c158;
+            --dark: #0a1a2d;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --gray-light: #e9ecef;
+            --success: #28a745;
+            --danger: #dc3545;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+            background-color: #fefefe;
+            width: 100%;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn-primary, .btn-secondary {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            cursor: pointer;
+            text-align: center;
+            border: none;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary);
+            color: var(--dark);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-light);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--light);
+            border: 2px solid var(--light);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 4px;
+            background-color: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Navegação */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(26, 58, 95, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            font-size: 2.5rem;
+        }
+
+        .logo-text h1 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            color: white;
+        }
+
+        .logo-text p {
+            font-size: 0.8rem;
+            color: var(--gray-light);
+            margin: 0;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-link {
+            color: white;
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+            transition: var(--transition);
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary);
+            bottom: 0;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--secondary);
+        }
+
+        .nav-link:hover:after, .nav-link.active:after {
+            width: 100%;
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(rgba(10, 26, 45, 0.85), rgba(10, 26, 45, 0.9)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            padding-top: 80px;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 30%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-text {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .typing-text {
+            color: var(--secondary);
+        }
+
+        .typing-cursor {
+            animation: blink 1s infinite;
+            margin-left: 5px;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        .hero-name {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: var(--gray-light);
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .hero-buttons .btn-primary, 
+        .hero-buttons .btn-secondary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-width: 220px;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .image-frame {
+            width: 350px;
+            height: 450px;
+            border: 5px solid var(--secondary);
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: var(--shadow);
+            transform: perspective(1000px) rotateY(-10deg);
+            transition: var(--transition);
+        }
+
+        .image-frame:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-light), var(--dark));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 5rem;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .image-placeholder p {
+            font-size: 1.1rem;
+            margin-top: 20px;
+            line-height: 1.4;
+        }
+
+        .floating-badges {
+            position: absolute;
+            bottom: 50px;
+            right: -30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .badge {
+            background-color: white;
+            color: var(--dark);
+            padding: 12px 20px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: var(--shadow);
+            font-weight: 600;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .badge:nth-child(2) {
+            animation-delay: 1s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-10px) translateX(-50%); }
+            60% { transform: translateY(-5px) translateX(-50%); }
+        }
+
+        /* Sobre */
+        .about-content {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        @media (min-width: 768px) {
+            .about-stats {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .stat {
+            text-align: center;
+            padding: 20px 10px;
+            background-color: var(--gray-light);
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+
+        .stat:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .stat h3 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .stat p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin: 0;
+        }
+
+        .about-image {
+            flex: 1;
+        }
+
+        .image-card {
+            background-color: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border-top: 5px solid var(--secondary);
+        }
+
+        .card-content h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .card-content ul {
+            list-style-type: none;
+        }
+
+        .card-content li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--gray-light);
+            position: relative;
+            padding-left: 25px;
+            line-height: 1.6;
+        }
+
+        .card-content li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        /* Áreas de Atuação */
+        .areas {
+            background-color: var(--gray-light);
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .area-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .area-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .area-card.highlighted {
+            border-top: 5px solid var(--secondary);
+        }
+
+        .area-card.highlighted:before {
+            content: 'PRINCIPAL';
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 5px 30px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            transform: rotate(45deg);
+        }
+
+        .area-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .area-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .area-card p {
+            flex-grow: 1;
+            margin-bottom: 20px;
+        }
+
+        .area-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        .tag {
+            background-color: var(--primary-light);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .areas-note {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .areas-note i {
+            color: var(--secondary);
+            font-size: 1.5rem;
+        }
+
+        /* Diferenciais */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 30px 20px;
+            transition: var(--transition);
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 2rem;
+            transition: var(--transition);
+        }
+
+        .feature:hover .icon-circle {
+            background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+            transform: scale(1.1);
+        }
+
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* Contato */
+        .contact-content {
+            display: flex;
+            gap: 60px;
+            margin-top: 50px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .info-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .info-text h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .info-text p {
+            margin: 5px 0;
+            font-size: 0.95rem;
+            color: var(--gray);
+        }
+
+        .info-note {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .contact-phone {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 8px 0;
+        }
+
+        .whatsapp-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--secondary);
+            font-weight: 500;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .whatsapp-link:hover {
+            color: var(--secondary-light);
+        }
+
+        .contact-form {
+            flex: 1;
+            background-color: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-form h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        .form-subtitle {
+            text-align: center;
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(26, 58, 95, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .form-consent {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .form-consent input[type="checkbox"] {
+            margin-top: 5px;
+        }
+
+        .form-consent label {
+            font-size: 0.85rem;
+            color: var(--gray);
+            line-height: 1.4;
+        }
+
+        /* Rodapé */
+        .footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 80px 0 30px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .footer .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .footer .logo-icon {
+            font-size: 2.5rem;
+        }
+
+        .footer .logo-text h2 {
+            font-size: 1.8rem;
+            color: white;
+            margin: 0;
+        }
+
+        .footer .logo-text p {
+            color: var(--gray-light);
+            margin: 0;
+        }
+
+        .footer-logo p {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .oab-footer {
+            color: var(--secondary);
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 1.1rem;
+        }
+
+        .footer-links, .footer-contact, .footer-social {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .footer-links h3, .footer-contact h3, .footer-social h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 5px 0;
+            color: #ccc;
+            font-size: 0.95rem;
+        }
+
+        .footer-social .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .footer-social .social-icons a {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .footer-social .social-icons a:hover {
+            background-color: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-5px);
+        }
+
+        .newsletter {
+            margin-top: 10px;
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .newsletter-form button {
+            background-color: var(--secondary);
+            color: var(--dark);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .newsletter-form button:hover {
+            background-color: var(--secondary-light);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-bottom i.fa-heart {
+            color: #e74c3c;
+        }
+
+        .privacy-link, .terms-link {
+            color: var(--secondary);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .privacy-link:hover, .terms-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Botão WhatsApp */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            z-index: 999;
+            transition: var(--transition);
+        }
+
+        .whatsapp-button:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 60px;
+            }
+            
+            .hero-text {
+                max-width: 100%;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .floating-badges {
+                right: 0;
+                left: 0;
+                flex-direction: row;
+                justify-content: center;
+                bottom: -30px;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-content {
+                flex-direction: column;
+            }
+            
+            .area-card.highlighted {
+                transform: none;
+            }
+            
+            .section-title {
+                font-size: 2.4rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                flex-direction: column;
+                background-color: var(--primary);
+                padding: 20px;
+                transition: var(--transition);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-toggle {
+                display: block;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-name {
+                font-size: 2.5rem;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .about-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-buttons .btn-primary,
+            .hero-buttons .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .image-frame {
+                width: 280px;
+                height: 380px;
+            }
+            
+            .floating-badges {
+                flex-direction: column;
+                align-items: center;
+                bottom: -60px;
+                right: 0;
+                left: 0;
+            }
+            
+            .badge {
+                width: 250px;
+                justify-content: center;
+            }
+            
+            .stat h3 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-form input,
+            .newsletter-form button {
+                width: 100%;
+                border-radius: 5px;
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navegação -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">⚖️</span>
+                <div class="logo-text">
+                    <h1>Dr. Lourival</h1>
+                    <p>Oliveira Advogados</p>
+                </div>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="#inicio" class="nav-link active">Início</a>
+                <a href="#sobre" class="nav-link">Sobre</a>
+                <a href="#areas" class="nav-link">Áreas de Atuação</a>
+                <a href="#diferenciais" class="nav-link">Diferenciais</a>
+                <a href="#contato" class="nav-link">Contato</a>
+            </div>
+            
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Seção Hero -->
+    <section class="hero" id="inicio">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2 class="hero-title">
+                    <span class="typing-text">Justiça</span>
+                    <span class="typing-cursor">|</span>
+                </h2>
+                <h1 class="hero-name">Dr. Lourival Oliveira</h1>
+                <p class="hero-subtitle">Advogado especializado em Direito Previdenciário com mais de 10 anos de experiência em Salvador e região</p>
+                <div class="hero-buttons">
+                    <a href="#contato" class="btn-primary">
+                        <i class="fas fa-calendar-check"></i> Agendar Consulta
+                    </a>
+                    <a href="https://wa.me/5571992209487?text=Olá,%20gostaria%20de%20tirar%20uma%20dúvida%20com%20o%20Dr.%20Lourival" class="btn-secondary" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <div class="image-frame">
+                    <div class="image-placeholder">
+                        <i class="fas fa-user-tie"></i>
+                        <p>Dr. Lourival Oliveira<br>OAB/BA 61.507</p>
+                    </div>
+                </div>
+                <div class="floating-badges">
+                    <div class="badge">
+                        <i class="fas fa-award"></i>
+                        <span>Excelência Jurídica</span>
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-star"></i>
+                        <span>+500 Casos Resolvidos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Seção Sobre -->
+    <section class="about" id="sobre">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Sobre o Dr. Lourival</h2>
+                <p class="section-subtitle">Experiência, dedicação e resultados em advocacia</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Com mais de 10 anos de atuação no Direito Previdenciário e outras áreas do Direito, o <strong>Dr. Lourival Oliveira</strong> é referência em Salvador quando se trata de defender os direitos dos cidadãos.</p>
+                    
+                    <p>Formado pela Universidade Salgado de Oliveira, Especialista em Direito Previdenciário e com forte atuação em Salvador, atuando com ética, transparência e comprometimento com cada cliente.</p>
+                    
+                    <p>Seu escritório oferece atendimento personalizado, sempre buscando a melhor solução jurídica para cada caso, com foco em resultados eficientes e satisfatórios.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>10+</h3>
+                            <p>Anos de Experiência</p>
+                        </div>
+                        <div class="stat">
+                            <h3>500+</h3>
+                            <p>Clientes Atendidos</p>
+                        </div>
+                        <div class="stat">
+                            <h3>95%</h3>
+                            <p>Taxa de Sucesso</p>
+                        </div>
+                        <div class="stat">
+                            <h3>100%</h3>
+                            <p>Dedicação ao Cliente</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    <div class="image-card">
+                        <div class="card-content">
+                            <h3><i class="fas fa-graduation-cap"></i> Formação e Especialidades</h3>
+                            <ul>
+                                <li>Bacharel em Direito - Universidade Salgado de Oliveira</li>
+                                <li>Especialista em Direito Previdenciário</li>
+                                <li>Atuação em Direito do Trabalho e Civil</li>
+                                <li>Experiência em Direito Criminal e do Consumidor</li>
+                                <li>Excelência em atendimento e resultados comprovados</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Áreas de Atuação -->
+    <section class="areas" id="areas">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Áreas de Atuação</h2>
+                <p class="section-subtitle">Especialidades jurídicas com foco em resultados</p>
+            </div>
+            
+            <div class="areas-grid">
+                <div class="area-card highlighted">
+                    <div class="area-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>Direito Previdenciário</h3>
+                    <p>Aposentadorias, pensões por morte, auxílio-doença, benefícios assistenciais (LOAS), revisões de benefícios e planejamento previdenciário.</p>
+                    <div class="area-tags">
+                        <span class="tag">Aposentadoria</span>
+                        <span class="tag">Pensão</span>
+                        <span class="tag">LOAS</span>
+                        <span class="tag">Auxílio-doença</span>
+                    </div>
+                </div>
+                
+                <div class="area-card">
+                    <div class="area-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Direito do Trabalho</h3>
+                    <p>Reclamações trabalhistas, rescisões indiretas, horas extras, assédio moral, acidentes de trabalho e negociações coletivas.</p>
+                    <div class="area-tags">
+                        <span class="tag">Rescisão</span>
+                        <span class="tag">Assédio</span>
+                        <span class="tag">Horas Extras</span>
+                        <span class="tag">Acidentes</span>
+                    </div>
+                </div>
+                
+                <div class="area-card">
+                    <div class="area-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Direito Civil</h3>
+                    <p>Contratos, responsabilidade civil, indenizações, direito de família, sucessões, usucapião, inventários e propriedade.</p>
+                    <div class="area-tags">
+                        <span class="tag">Contratos</span>
+                        <span class="tag">Família</span>
+                        <span class="tag">Indenizações</span>
+                        <span class="tag">Inventários</span>
+                    </div>
+                </div>
+                
+                <div class="area-card">
+                    <div class="area-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>Direito do Consumidor</h3>
+                    <p>Problemas com produtos e serviços, voos atrasados/cancelados, cobranças indevidas, planos de saúde, serviços públicos e telecomunicações.</p>
+                    <div class="area-tags">
+                        <span class="tag">Procon</span>
+                        <span class="tag">Indenização</span>
+                        <span class="tag">Cobrança</span>
+                        <span class="tag">Serviços</span>
+                    </div>
+                </div>
+                
+                <div class="area-card">
+                    <div class="area-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3>Direito Criminal</h3>
+                    <p>Defesa em processos criminais, habeas corpus, tráfico de drogas, crimes contra a pessoa e patrimônio, liberdade provisória.</p>
+                    <div class="area-tags">
+                        <span class="tag">Defesa</span>
+                        <span class="tag">Habeas Corpus</span>
+                        <span class="tag">Liberdade</span>
+                        <span class="tag">Crimes</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="areas-note">
+                <p><i class="fas fa-info-circle"></i> Atuamos também em outras áreas do Direito. Entre em contato para saber mais sobre sua situação específica.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Diferenciais -->
+    <section class="features" id="diferenciais">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Por que Escolher Nossa Advocacia</h2>
+                <p class="section-subtitle">Diferenciais que nos tornam únicos no atendimento jurídico</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <div class="icon-circle">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                    </div>
+                    <h3>Atendimento Personalizado</h3>
+                    <p>Cada cliente recebe atenção exclusiva, com acompanhamento próximo em todas as etapas do processo.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">
+                        <div class="icon-circle">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                    </div>
+                    <h3>Agilidade Processual</h3>
+                    <p>Utilizamos tecnologia de ponta para agilizar processos e manter os clientes sempre informados sobre andamentos.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">
+                        <div class="icon-circle">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                    </div>
+                    <h3>Transparência Total</h3>
+                    <p>Informações claras sobre honorários, prazos e possibilidades de sucesso desde a primeira consulta.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">
+                        <div class="icon-circle">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                    </div>
+                    <h3>Atuação em Salvador</h3>
+                    <p>Conhecimento profundo da realidade jurídica de Salvador e toda a Bahia, com escritório estratégico no bairro de Pituaçu.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">
+                        <div class="icon-circle">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <h3>Alta Taxa de Sucesso</h3>
+                    <p>Mais de 95% de casos resolvidos com sucesso, garantindo a melhor defesa para os direitos dos nossos clientes.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">
+                        <div class="icon-circle">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                    </div>
+                    <h3>Honorários Justos</h3>
+                    <p>Proposta clara e justa de honorários, com possibilidade de parcelamento e flexibilidade de pagamento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section class="contact" id="contato">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Entre em Contato</h2>
+                <p class="section-subtitle">Agende uma consulta ou tire suas dúvidas</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-text">
+                            <h3>Escritório em Salvador</h3>
+                            <p>Rua Gonçalves Cezimbra, 17, Apto 102 - Pituaçu</p>
+                            <p>Salvador - BA, 41741-155</p>
+                            <p class="info-note"><i class="fas fa-info-circle"></i> Atendimento com agendamento prévio</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="info-text">
+                            <h3>Telefone & WhatsApp</h3>
+                            <p class="contact-phone">
+                                <i class="fab fa-whatsapp"></i> (71) 99220-9487
+                            </p>
+                            <p class="contact-phone">
+                                <i class="fas fa-phone"></i> (71) 3333-3333
+                            </p>
+                            <a href="https://wa.me/5571992209487?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Lourival" class="whatsapp-link" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Clique para conversar no WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-text">
+                            <h3>E-mail</h3>
+                            <p>
+                                <i class="fas fa-envelope"></i> contato@drlourivaloliveira.com.br
+                            </p>
+                            <p>
+                                <i class="fas fa-envelope"></i> contato@lourival.com.br
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-text">
+                            <h3>Horário de Atendimento</h3>
+                            <p><i class="far fa-calendar-alt"></i> Segunda a Sexta: 8h às 18h</p>
+                            <p><i class="far fa-calendar-alt"></i> Sábado: 9h às 12h (com agendamento)</p>
+                            <p class="info-note"><i class="fas fa-info-circle"></i> Plantão por telefone para clientes</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Envie sua Mensagem</h3>
+                    <p class="form-subtitle">Responderemos em até 24 horas úteis</p>
+                    
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Seu nome completo" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="tel" id="phone" placeholder="Seu telefone com WhatsApp" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Seu melhor e-mail" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <select id="subject" required>
+                                <option value="" disabled selected>Assunto de interesse</option>
+                                <option value="previdenciario">Direito Previdenciário</option>
+                                <option value="trabalhista">Direito do Trabalho</option>
+                                <option value="civil">Direito Civil</option>
+                                <option value="consumidor">Direito do Consumidor</option>
+                                <option value="criminal">Direito Criminal</option>
+                                <option value="outro">Outro assunto</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea id="message" rows="5" placeholder="Descreva brevemente sua situação" required></textarea>
+                        </div>
+                        
+                        <div class="form-consent">
+                            <input type="checkbox" id="consent" required>
+                            <label for="consent">Concordo em compartilhar meus dados para contato, conforme a Lei Geral de Proteção de Dados (LGPD)</label>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-paper-plane"></i> Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">
+                        <span class="logo-icon">⚖️</span>
+                        <div class="logo-text">
+                            <h2>Dr. Lourival Oliveira</h2>
+                            <p>Advocacia de Excelência</p>
+                        </div>
+                    </div>
+                    <p>Defendendo seus direitos com ética, experiência e resultados em Salvador e toda a Bahia.</p>
+                    <p class="oab-footer"><strong>OAB/BA:</strong> 61.507</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Áreas de Atuação</h3>
+                    <a href="#areas">Direito Previdenciário</a>
+                    <a href="#areas">Direito do Trabalho</a>
+                    <a href="#areas">Direito Civil</a>
+                    <a href="#areas">Direito do Consumidor</a>
+                    <a href="#areas">Direito Criminal</a>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contato Rápido</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Rua Gonçalves Cezimbra, 17 - Pituaçu, Salvador - BA</p>
+                    <p><i class="fab fa-whatsapp"></i> (71) 99220-9487</p>
+                    <p><i class="fas fa-envelope"></i> contato@lourival.com.br</p>
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Conecte-se</h3>
+                    <div class="social-icons">
+                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://wa.me/5571992209487" title="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <p class="newsletter">Assine nossa newsletter para dicas jurídicas:</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Seu e-mail">
+                        <button type="button" id="newsletterBtn">Inscrever</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Dr. Lourival Oliveira - Todos os direitos reservados. OAB/BA 61.507</p>
+                <p>Desenvolvido com <i class="fas fa-heart"></i> para advocacia de excelência | <a href="#" class="privacy-link">Política de Privacidade</a> | <a href="#" class="terms-link">Termos de Uso</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão do WhatsApp -->
+    <a href="https://wa.me/5571992209487?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Lourival" class="whatsapp-button" target="_blank" title="Fale conosco no WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Script embutido -->
+    <script>
+        // Inicialização quando o DOM estiver carregado
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Site do Dr. Lourival Oliveira carregado!');
+            
+            // Menu Mobile Toggle
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.getElementById('navMenu');
+            
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    navToggle.innerHTML = navMenu.classList.contains('active') 
+                        ? '<i class="fas fa-times"></i>' 
+                        : '<i class="fas fa-bars"></i>';
+                });
+                
+                // Fechar menu ao clicar em um link
+                const navLinks = document.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        navMenu.classList.remove('active');
+                        navToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                    });
+                });
+            }
+            
+            // Efeito de digitação no hero
+            const typingText = document.querySelector('.typing-text');
+            if (typingText) {
+                const words = ['Justiça', 'Defesa', 'Direitos', 'Resultados', 'Excelência', 'Advocacia'];
+                let wordIndex = 0;
+                let charIndex = 0;
+                let isDeleting = false;
+                let isPaused = false;
+                
+                function typeEffect() {
+                    const currentWord = words[wordIndex];
+                    
+                    if (!isPaused) {
+                        if (!isDeleting && charIndex <= currentWord.length) {
+                            typingText.textContent = currentWord.substring(0, charIndex);
+                            charIndex++;
+                            setTimeout(typeEffect, 100);
+                        } else if (isDeleting && charIndex >= 0) {
+                            typingText.textContent = currentWord.substring(0, charIndex);
+                            charIndex--;
+                            setTimeout(typeEffect, 50);
+                        } else {
+                            isDeleting = !isDeleting;
+                            
+                            if (!isDeleting) {
+                                wordIndex = (wordIndex + 1) % words.length;
+                            }
+                            
+                            // Pausa antes de começar a digitar a próxima palavra
+                            isPaused = true;
+                            setTimeout(() => {
+                                isPaused = false;
+                                typeEffect();
+                            }, 1500);
+                        }
+                    }
+                }
+                
+                // Iniciar o efeito após um breve delay
+                setTimeout(typeEffect, 1000);
+            }
+            
+            // Scroll suave para links internos
+            const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
+            smoothScrollLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Ativar link do menu conforme scroll
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            function highlightNavLink() {
+                let scrollPosition = window.scrollY + 100;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${sectionId}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', highlightNavLink);
+            
+            // Formulário de contato
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Aqui normalmente você enviaria os dados para um servidor
+                    // Por enquanto, vamos apenas simular o envio
+                    
+                    // Coletar dados do formulário
+                    const formData = {
+                        name: document.getElementById('name').value,
+                        phone: document.getElementById('phone').value,
+                        email: document.getElementById('email').value,
+                        subject: document.getElementById('subject').value,
+                        message: document.getElementById('message').value
+                    };
+                    
+                    // Exibir mensagem de sucesso
+                    const submitBtn = contactForm.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.innerHTML;
+                    
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+                    submitBtn.disabled = true;
+                    
+                    // Simular envio
+                    setTimeout(() => {
+                        // Aqui você normalmente enviaria os dados para um servidor
+                        // Por exemplo: fetch('seu-endpoint', { method: 'POST', body: JSON.stringify(formData) })
+                        
+                        // Mostrar mensagem de sucesso
+                        alert(`Obrigado, ${formData.name}! Sua mensagem foi enviada com sucesso. Entraremos em contato em até 24 horas.`);
+                        
+                        // Resetar formulário
+                        contactForm.reset();
+                        
+                        // Restaurar botão
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                    }, 1500);
+                });
+            }
+            
+            // Newsletter
+            const newsletterBtn = document.getElementById('newsletterBtn');
+            if (newsletterBtn) {
+                newsletterBtn.addEventListener('click', function() {
+                    const emailInput = document.querySelector('.newsletter-form input');
+                    if (emailInput.value) {
+                        const originalText = newsletterBtn.textContent;
+                        newsletterBtn.textContent = 'Inscrito!';
+                        newsletterBtn.style.backgroundColor = '#28a745';
+                        
+                        setTimeout(() => {
+                            newsletterBtn.textContent = originalText;
+                            newsletterBtn.style.backgroundColor = '';
+                            emailInput.value = '';
+                        }, 2000);
+                    }
+                });
+            }
+            
+            // Animar elementos ao rolar a página
+            const animateOnScroll = () => {
+                const elements = document.querySelectorAll('.area-card, .feature, .info-card');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.2;
+                    
+                    if (elementPosition < screenPosition) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Inicializar elementos com opacidade 0 para animação
+            const animatedElements = document.querySelectorAll('.area-card, .feature, .info-card');
+            animatedElements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            
+            window.addEventListener('scroll', animateOnScroll);
+            // Executar uma vez ao carregar a página
+            setTimeout(animateOnScroll, 300);
+            
+            // Efeito parallax no hero
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const hero = document.querySelector('.hero');
+                
+                if (hero) {
+                    hero.style.backgroundPositionY = `${scrolled * 0.5}px`;
+                }
+            });
+            
+            // Mudar navbar ao rolar
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) {
+                    navbar.style.padding = '15px 0';
+                    navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                } else {
+                    navbar.style.padding = '20px 0';
+                    navbar.style.boxShadow = 'none';
+                }
+            });
+            
+            // Inicializar contadores
+            const stats = document.querySelectorAll('.stat h3');
+            stats.forEach(stat => {
+                const target = parseInt(stat.textContent);
+                let current = 0;
+                const increment = target / 100;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    stat.textContent = Math.floor(current) + (stat.textContent.includes('%') ? '%' : '+');
+                }, 20);
+            });
+        });
+    </script>
+</body>
+</html>
