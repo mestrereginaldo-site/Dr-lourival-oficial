@@ -784,11 +784,11 @@
             line-height: 1.4;
         }
 
-        /* Rodapé */
+        /* Rodapé ATUALIZADO - sem newsletter */
         .footer {
             background-color: var(--dark);
             color: white;
-            padding: 80px 0 30px;
+            padding: 60px 0 30px; /* Reduzido o padding */
         }
 
         .footer-content {
@@ -796,7 +796,7 @@
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 40px;
-            margin-bottom: 50px;
+            margin-bottom: 40px; /* Reduzido */
         }
 
         .footer-logo {
@@ -872,7 +872,7 @@
         .footer-social .social-icons {
             display: flex;
             gap: 15px;
-            margin-bottom: 20px;
+            margin-top: 10px;
         }
 
         .footer-social .social-icons a {
@@ -891,40 +891,6 @@
             background-color: var(--secondary);
             color: var(--dark);
             transform: translateY(-5px);
-        }
-
-        .newsletter {
-            margin-top: 10px;
-            color: #ccc;
-            font-size: 0.9rem;
-        }
-
-        .newsletter-form {
-            display: flex;
-            margin-top: 10px;
-        }
-
-        .newsletter-form input {
-            flex: 1;
-            padding: 10px;
-            border: none;
-            border-radius: 5px 0 0 5px;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .newsletter-form button {
-            background-color: var(--secondary);
-            color: var(--dark);
-            border: none;
-            padding: 10px 15px;
-            border-radius: 0 5px 5px 0;
-            cursor: pointer;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .newsletter-form button:hover {
-            background-color: var(--secondary-light);
         }
 
         .footer-bottom {
@@ -1096,17 +1062,6 @@
             
             .section-title {
                 font-size: 1.8rem;
-            }
-            
-            .newsletter-form {
-                flex-direction: column;
-            }
-            
-            .newsletter-form input,
-            .newsletter-form button {
-                width: 100%;
-                border-radius: 5px;
-                margin-bottom: 5px;
             }
         }
     </style>
@@ -1510,7 +1465,7 @@
         </div>
     </section>
 
-    <!-- Rodapé -->
+    <!-- Rodapé ATUALIZADO - sem newsletter -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -1550,17 +1505,12 @@
                         <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
                         <a href="https://wa.me/5571992209487" title="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     </div>
-                    <p class="newsletter">Assine nossa newsletter para dicas jurídicas:</p>
-                    <div class="newsletter-form">
-                        <input type="email" placeholder="Seu e-mail">
-                        <button type="button" id="newsletterBtn">Inscrever</button>
-                    </div>
                 </div>
             </div>
             
             <div class="footer-bottom">
                 <p>&copy; 2025 Dr. Lourival Oliveira - Todos os direitos reservados. OAB/BA 61.507</p>
-                <p>Desenvolvido com <i class="fas fa-heart"></i> para advocacia de excelência | <a href="#" class="privacy-link">Política de Privacidade</a> | <a href="#" class="terms-link">Termos de Uso</a></p>
+                <p>Desenvolvido com <i class="fas fa-heart"></i> para advocacia de excelência | <a href="politica-privacidade.html" class="privacy-link">Política de Privacidade</a> | <a href="termos-uso.html" class="terms-link">Termos de Uso</a></p>
             </div>
         </div>
     </footer>
@@ -1724,25 +1674,6 @@
                         submitBtn.innerHTML = originalText;
                         submitBtn.disabled = false;
                     }, 1500);
-                });
-            }
-            
-            // Newsletter
-            const newsletterBtn = document.getElementById('newsletterBtn');
-            if (newsletterBtn) {
-                newsletterBtn.addEventListener('click', function() {
-                    const emailInput = document.querySelector('.newsletter-form input');
-                    if (emailInput.value) {
-                        const originalText = newsletterBtn.textContent;
-                        newsletterBtn.textContent = 'Inscrito!';
-                        newsletterBtn.style.backgroundColor = '#28a745';
-                        
-                        setTimeout(() => {
-                            newsletterBtn.textContent = originalText;
-                            newsletterBtn.style.backgroundColor = '';
-                            emailInput.value = '';
-                        }, 2000);
-                    }
                 });
             }
             
