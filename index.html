@@ -232,7 +232,7 @@
             cursor: pointer;
         }
 
-        /* Hero Section */
+        /* Hero Section - ATUALIZADO PARA FOTO */
         .hero {
             min-height: 100vh;
             background: linear-gradient(rgba(10, 26, 45, 0.85), rgba(10, 26, 45, 0.9)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
@@ -344,11 +344,20 @@
             transform: perspective(1000px) rotateY(0deg);
         }
 
+        /* ESTILO PARA A FOTO REAL */
+        .profile-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* PLACEHOLDER - aparece só se a foto não carregar */
         .image-placeholder {
             width: 100%;
             height: 100%;
             background: linear-gradient(135deg, var(--primary-light), var(--dark));
-            display: flex;
+            display: none; /* Inicialmente escondido */
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -411,6 +420,7 @@
             60% { transform: translateY(-5px) translateX(-50%); }
         }
 
+        /* Resto do CSS permanece igual... */
         /* Sobre */
         .about-content {
             display: flex;
@@ -1092,7 +1102,7 @@
         </div>
     </nav>
 
-    <!-- Seção Hero -->
+    <!-- Seção Hero - ATUALIZADA COM FOTO -->
     <section class="hero" id="inicio">
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -1115,7 +1125,11 @@
             
             <div class="hero-image">
                 <div class="image-frame">
-                    <div class="image-placeholder">
+                    <!-- FOTO DO DR. LOURIVAL - COLOCAR NA RAIZ DO SITE COM ESTE NOME -->
+                    <img src="dr-lourival-foto.jpg" alt="Dr. Lourival Oliveira - Advogado em Salvador" class="profile-photo" id="profilePhoto">
+                    
+                    <!-- PLACEHOLDER que só aparece se a foto não carregar -->
+                    <div class="image-placeholder" id="photoPlaceholder">
                         <i class="fas fa-user-tie"></i>
                         <p>Dr. Lourival Oliveira<br>OAB/BA 61.507</p>
                     </div>
@@ -1138,6 +1152,7 @@
         </div>
     </section>
 
+    <!-- Resto do código permanece igual... -->
     <!-- Seção Sobre -->
     <section class="about" id="sobre">
         <div class="container">
@@ -1496,6 +1511,16 @@
                     <p><i class="fab fa-whatsapp"></i> (71) 99220-9487</p>
                     <p><i class="fas fa-envelope"></i> contato@lourival.com.br</p>
                 </div>
+                
+                <div class="footer-social">
+                    <h3>Conecte-se</h3>
+                    <div class="social-icons">
+                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://wa.me/5571992209487" title="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
             </div>
             
             <div class="footer-bottom">
@@ -1510,12 +1535,38 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Script embutido -->
+    <!-- Script embutido ATUALIZADO para detectar foto -->
     <script>
         // Inicialização quando o DOM estiver carregado
         document.addEventListener('DOMContentLoaded', function() {
             console.log('Site do Dr. Lourival Oliveira carregado!');
             
+            // Verificar se a foto carregou
+            const profilePhoto = document.getElementById('profilePhoto');
+            const photoPlaceholder = document.getElementById('photoPlaceholder');
+            
+            if (profilePhoto && photoPlaceholder) {
+                // Se a foto já carregou
+                if (profilePhoto.complete && profilePhoto.naturalHeight !== 0) {
+                    // Foto carregou com sucesso
+                    photoPlaceholder.style.display = 'none';
+                    profilePhoto.style.display = 'block';
+                } else {
+                    // Se a foto não carregar, mostrar placeholder
+                    profilePhoto.onerror = function() {
+                        this.style.display = 'none';
+                        photoPlaceholder.style.display = 'flex';
+                    };
+                    
+                    // Se a foto demorar a carregar, mostrar placeholder temporariamente
+                    profilePhoto.onload = function() {
+                        photoPlaceholder.style.display = 'none';
+                        this.style.display = 'block';
+                    };
+                }
+            }
+            
+            // Resto do JavaScript permanece igual...
             // Menu Mobile Toggle
             const navToggle = document.getElementById('navToggle');
             const navMenu = document.getElementById('navMenu');
