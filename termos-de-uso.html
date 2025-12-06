@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termos de Uso - Dr. Lourival Oliveira</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Usamos o mesmo CSS do site principal, mas apenas o necessário */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a3a5f;
+            --primary-light: #2a5a8c;
+            --secondary: #d4af37;
+            --secondary-light: #e6c158;
+            --dark: #0a1a2d;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --gray-light: #e9ecef;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fefefe;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navegação */
+        .navbar {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(26, 58, 95, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            font-size: 2.5rem;
+        }
+
+        .logo-text h1 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            color: white;
+        }
+
+        .logo-text p {
+            font-size: 0.8rem;
+            color: var(--gray-light);
+            margin: 0;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-link {
+            color: white;
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+            transition: var(--transition);
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary);
+            bottom: 0;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--secondary);
+        }
+
+        .nav-link:hover:after, .nav-link.active:after {
+            width: 100%;
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Conteúdo dos Termos de Uso */
+        .terms-content {
+            padding: 100px 0;
+        }
+
+        .terms-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .terms-title {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .terms-title:after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 4px;
+            background-color: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .terms-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .terms-section {
+            margin-bottom: 40px;
+        }
+
+        .terms-section h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .terms-section p {
+            margin-bottom: 15px;
+            color: var(--gray);
+        }
+
+        .terms-section ul {
+            list-style-position: inside;
+            margin-bottom: 15px;
+            color: var(--gray);
+        }
+
+        .terms-section li {
+            margin-bottom: 10px;
+        }
+
+        /* Rodapé */
+        .footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .footer .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .footer .logo-icon {
+            font-size: 2.5rem;
+        }
+
+        .footer .logo-text h2 {
+            font-size: 1.8rem;
+            color: white;
+            margin: 0;
+        }
+
+        .footer .logo-text p {
+            color: var(--gray-light);
+            margin: 0;
+        }
+
+        .footer-logo p {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .oab-footer {
+            color: var(--secondary);
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 1.1rem;
+        }
+
+        .footer-links, .footer-contact, .footer-social {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .footer-links h3, .footer-contact h3, .footer-social h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 5px 0;
+            color: #ccc;
+            font-size: 0.95rem;
+        }
+
+        .footer-social .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .footer-social .social-icons a {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .footer-social .social-icons a:hover {
+            background-color: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-bottom i.fa-heart {
+            color: #e74c3c;
+        }
+
+        .privacy-link, .terms-link {
+            color: var(--secondary);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .privacy-link:hover, .terms-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                flex-direction: column;
+                background-color: var(--primary);
+                padding: 20px;
+                transition: var(--transition);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-toggle {
+                display: block;
+            }
+            
+            .terms-title {
+                font-size: 2.2rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navegação -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">⚖️</span>
+                <div class="logo-text">
+                    <h1>Dr. Lourival</h1>
+                    <p>Oliveira Advogados</p>
+                </div>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Início</a>
+                <a href="index.html#sobre" class="nav-link">Sobre</a>
+                <a href="index.html#areas" class="nav-link">Áreas de Atuação</a>
+                <a href="index.html#contato" class="nav-link">Contato</a>
+            </div>
+            
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Conteúdo dos Termos de Uso -->
+    <section class="terms-content">
+        <div class="container">
+            <div class="terms-header">
+                <h1 class="terms-title">Termos de Uso</h1>
+                <p class="terms-subtitle">Última atualização: 06 de dezembro de 2025</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>1. Aceitação dos Termos</h2>
+                <p>Ao acessar e usar o site drlourivaloliveira.com.br ("Site"), você concorda em cumprir e ficar vinculado a estes Termos de Uso. Se você não concordar com qualquer parte destes termos, não utilize nosso Site.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>2. Uso do Site</h2>
+                <p>Você concorda em usar o Site apenas para fins legais e de acordo com estes Termos de Uso. Você não deve:</p>
+                <ul>
+                    <li>Usar o Site de maneira que viole qualquer lei ou regulamento aplicável</li>
+                    <li>Realizar atividades fraudulentas ou enganosas</li>
+                    <li>Interferir ou tentar interferir na operação do Site</li>
+                    <li>Tentar obter acesso não autorizado a qualquer parte do Site</li>
+                    <li>Enviar ou transmitir qualquer material prejudicial ou malicioso</li>
+                </ul>
+            </div>
+            
+            <div class="terms-section">
+                <h2>3. Informações do Site</h2>
+                <p>As informações contidas neste Site são fornecidas para fins informativos gerais e não constituem aconselhamento jurídico. O conteúdo do Site não substitui a consulta com um advogado qualificado.</p>
+                <p>Embora nos esforcemos para manter as informações atualizadas e precisas, não garantimos a completude, precisão ou atualidade das informações.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>4. Propriedade Intelectual</h2>
+                <p>Todo o conteúdo do Site, incluindo texto, gráficos, logotipos, ícones, imagens e software, é propriedade do Dr. Lourival Oliveira ou de seus licenciadores e está protegido por leis de direitos autorais e propriedade intelectual.</p>
+                <p>Você não pode reproduzir, distribuir, modificar ou criar obras derivadas sem autorização prévia por escrito.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>5. Links para Sites de Terceiros</h2>
+                <p>O Site pode conter links para sites de terceiros. Não nos responsabilizamos pelo conteúdo, políticas de privacidade ou práticas de sites de terceiros.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>6. Limitação de Responsabilidade</h2>
+                <p>Em nenhuma circunstância o Dr. Lourival Oliveira, seus sócios ou colaboradores serão responsáveis por quaisquer danos diretos, indiretos, incidentais ou consequenciais resultantes do uso ou incapacidade de uso do Site.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>7. Contato através do Site</h2>
+                <p>O envio de informações através do formulário de contato não estabelece uma relação advogado-cliente. A relação advogado-cliente só será estabelecida após a assinatura de contrato de prestação de serviços advocatícios.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>8. Modificações nos Termos</h2>
+                <p>Reservamo-nos o direito de modificar estes Termos de Uso a qualquer momento. As alterações entrarão em vigor imediatamente após a publicação no Site. O uso continuado do Site após tais modificações constitui sua aceitação dos novos termos.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>9. Lei Aplicável</h2>
+                <p>Estes Termos de Uso são regidos e interpretados de acordo com as leis da República Federativa do Brasil. Qualquer disputa relacionada a estes termos será submetida à jurisdição exclusiva dos tribunais de Salvador, Bahia.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>10. Contato</h2>
+                <p>Se você tiver dúvidas sobre estes Termos de Uso, entre em contato conosco:</p>
+                <p>Dr. Lourival Oliveira Advogados<br>
+                E-mail: contato@drlourivaloliveira.com.br<br>
+                Telefone: (71) 99220-9487<br>
+                Endereço: Rua Gonçalves Cezimbra, 17, Apto 102 - Pituaçu, Salvador - BA, 41741-155</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">
+                        <span class="logo-icon">⚖️</span>
+                        <div class="logo-text">
+                            <h2>Dr. Lourival Oliveira</h2>
+                            <p>Advocacia de Excelência</p>
+                        </div>
+                    </div>
+                    <p>Defendendo seus direitos com ética, experiência e resultados em Salvador e toda a Bahia.</p>
+                    <p class="oab-footer"><strong>OAB/BA:</strong> 61.507</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Áreas de Atuação</h3>
+                    <a href="index.html#areas">Direito Previdenciário</a>
+                    <a href="index.html#areas">Direito do Trabalho</a>
+                    <a href="index.html#areas">Direito Civil</a>
+                    <a href="index.html#areas">Direito do Consumidor</a>
+                    <a href="index.html#areas">Direito Criminal</a>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contato Rápido</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Rua Gonçalves Cezimbra, 17 - Pituaçu, Salvador - BA</p>
+                    <p><i class="fab fa-whatsapp"></i> (71) 99220-9487</p>
+                    <p><i class="fas fa-envelope"></i> contato@lourival.com.br</p>
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Conecte-se</h3>
+                    <div class="social-icons">
+                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://wa.me/5571992209487" title="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Dr. Lourival Oliveira - Todos os direitos reservados. OAB/BA 61.507</p>
+                <p>Desenvolvido com <i class="fas fa-heart"></i> para advocacia de excelência | <a href="politica-de-privacidade.html" class="privacy-link">Política de Privacidade</a> | <a href="termos-de-uso.html" class="terms-link">Termos de Uso</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu Mobile Toggle
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                navToggle.innerHTML = navMenu.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+            });
+        }
+    </script>
+</body>
+</html>
