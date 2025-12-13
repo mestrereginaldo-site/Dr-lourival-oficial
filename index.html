@@ -1469,7 +1469,7 @@
                         </div>
                         
                         <button type="submit" class="btn-primary">
-                            <i class="fas fa-paper-plane"></i> Enviar Mensagem
+                            <i class="fab fa-whatsapp"></i> Enviar para WhatsApp
                         </button>
                     </form>
                 </div>
@@ -1672,46 +1672,71 @@
             
             window.addEventListener('scroll', highlightNavLink);
             
-            // Formulário de contato
+            // Formulário de contato - Enviar para WhatsApp
             const contactForm = document.getElementById('contactForm');
             if (contactForm) {
                 contactForm.addEventListener('submit', function(e) {
                     e.preventDefault();
                     
-                    // Aqui normalmente você enviaria os dados para um servidor
-                    // Por enquanto, vamos apenas simular o envio
+                    // Verificar se concordou com a LGPD
+                    const consentCheckbox = document.getElementById('consent');
+                    if (!consentCheckbox.checked) {
+                        alert('Por favor, marque a opção de consentimento LGPD.');
+                        return;
+                    }
                     
-                    // Coletar dados do formulário
-                    const formData = {
-                        name: document.getElementById('name').value,
-                        phone: document.getElementById('phone').value,
-                        email: document.getElementById('email').value,
-                        subject: document.getElementById('subject').value,
-                        message: document.getElementById('message').value
-                    };
+                    // Pegar dados do formulário
+                    const name = document.getElementById('name').value;
+                    const phone = document.getElementById('phone').value;
+                    const email = document.getElementById('email').value;
+                    const subject = document.getElementById('subject').value;
+                    const message = document.getElementById('message').value;
                     
-                    // Exibir mensagem de sucesso
+                    // Verificar se todos os campos estão preenchidos
+                    if (!name || !phone || !email || !subject || !message) {
+                        alert('Por favor, preencha todos os campos.');
+                        return;
+                    }
+                    
+                    // Pegar o texto do assunto selecionado
+                    const subjectText = document.getElementById('subject').options[document.getElementById('subject').selectedIndex].text;
+                    
+                    // Criar mensagem para WhatsApp
+                    const whatsappMessage = `*NOVO CONTATO DO SITE*%0A%0A` +
+                                           `*Nome:* ${name}%0A` +
+                                           `*Telefone:* ${phone}%0A` +
+                                           `*E-mail:* ${email}%0A` +
+                                           `*Assunto:* ${subjectText}%0A` +
+                                           `*Mensagem:* ${message}%0A%0A` +
+                                           `_Enviado através do site www.lourivaloliveira.com.br_`;
+                    
+                    // Número do WhatsApp do Dr. Lourival
+                    const whatsappNumber = '5571981303910';
+                    
+                    // Criar link do WhatsApp
+                    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+                    
+                    // Mudar botão para mostrar que está processando
                     const submitBtn = contactForm.querySelector('button[type="submit"]');
                     const originalText = submitBtn.innerHTML;
-                    
-                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Abrindo WhatsApp...';
                     submitBtn.disabled = true;
                     
-                    // Simular envio
+                    // Aguardar 1 segundo e abrir WhatsApp
                     setTimeout(() => {
-                        // Aqui você normalmente enviaria os dados para um servidor
-                        // Por exemplo: fetch('seu-endpoint', { method: 'POST', body: JSON.stringify(formData) })
+                        // Abrir WhatsApp em nova aba
+                        window.open(whatsappUrl, '_blank');
                         
-                        // Mostrar mensagem de sucesso
-                        alert(`Obrigado, ${formData.name}! Sua mensagem foi enviada com sucesso. Entraremos em contato em até 24 horas.`);
+                        // Mostrar mensagem
+                        alert(`Obrigado, ${name}! Você será redirecionado para o WhatsApp. Confirme o envio da mensagem.`);
                         
-                        // Resetar formulário
+                        // Limpar formulário
                         contactForm.reset();
                         
-                        // Restaurar botão
+                        // Voltar botão ao normal
                         submitBtn.innerHTML = originalText;
                         submitBtn.disabled = false;
-                    }, 1500);
+                    }, 1000);
                 });
             }
             
